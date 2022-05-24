@@ -20,6 +20,14 @@ public class Categoria {
 	@Column(name = "nivel")
 	private int nivel;
 	
+	protected Categoria() {
+    	}
+ 
+    	public Categoria(String nombreCat, int nivel) {
+        	this.nombreCat = nombreCat;
+        	this.nivel = nivel;
+    	} 
+	
 	public int getNivel() {
 		return nivel;
 	}
