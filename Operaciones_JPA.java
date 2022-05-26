@@ -14,7 +14,14 @@ public void run(String... args) throws Exception {
         Categoria obj = listado.get(0);
         obj.setDescription("Juguetes");
         categoRepo.save(obj);
-         
+        
+        
+        System.out.println("\n Editar la Marca de un producto...");
+        Inventario obj = inventRepo.findById("DRT699").orElse(null);
+	obj.setMarca("EPSON");
+	inventRepo.save(obj);
+                
+                 
         leerRepositorio();
          
         System.out.println("\n Eliminar una categoria ...");        
