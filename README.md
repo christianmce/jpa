@@ -14,8 +14,9 @@ Una SECUENCIA es un objeto de base de datos que genera números enteros incremen
   **@Id @GeneratedValue(strategy= GenerationType.AUTO)**
 El GenerationType.AUTO es el tipo de generación por defecto y permite que el proveedor de persistencia elegir la estrategia de generación. Si usa Hibernate como su proveedor de persistencia, selecciona una estrategia de generación basada en el dialecto específico de la base de datos.
 
+
   
-##Relationship in JPA
+## Relationship in JPA
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
