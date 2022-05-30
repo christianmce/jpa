@@ -38,6 +38,7 @@ Las operaciones en cascada de JPA / Hibernate, representadas en el enum javax.pe
 
 **CascadeType.DETACH:** se separan del contexto de persistencia todas las entidades relacionadas cuando ocurre una operación de separación manual.
 
+
 @Entity
 public class Usuario {
 
@@ -45,7 +46,6 @@ public class Usuario {
    Direccion direccion;
    
    @OneToOne(cascade={CascadeType.PERSIST})
-   Login login;
-   
+   Login login;   
    
 }
