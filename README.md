@@ -25,9 +25,15 @@ El GenerationType.AUTO es el tipo de generación por defecto y permite que el pr
 Cascade es una herramienta más de JPA e Hibernate, y es tarea del programador saber acertar en su uso. Cascade puede tanto facilitarnos la tarea como amargarnos la existencia si no se usa correctamente. Para un mismo tipo de relación caben muchas posibilidades. La respuesta es que depende de la funcionalidad del modelo de nuestra relación.
 
 Las operaciones en cascada de JPA / Hibernate, representadas en el enum javax.persistence.CascadeType, son:
+
 **CascadeType.ALL:** se aplican todos los tipos de cascada.
+
 **CascadeType.PERSIST:** las operaciones de guardado en la base de datos de las entidades padre se propagarán a las entidades relacionadas.
+
 **CascadeType.MERGE:** las entidades relacionadas se unirán al contexto de persistencia cuando la entidad propietaria se una.
+
 **CascadeType.REMOVE:** las entidades relacionadas se eliminan de la base de datos cuando la entidad propietaria se elimine.
+
 **CascadeType.REFRESH:** las entidades relacionadas actualizan sus datos desde la base de datos cuando la entidad propietaria se actualiza.
+
 **CascadeType.DETACH:** se separan del contexto de persistencia todas las entidades relacionadas cuando ocurre una operación de separación manual.
