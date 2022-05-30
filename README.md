@@ -37,3 +37,13 @@ Las operaciones en cascada de JPA / Hibernate, representadas en el enum javax.pe
 **CascadeType.REFRESH:** las entidades relacionadas actualizan sus datos desde la base de datos cuando la entidad propietaria se actualiza.
 
 **CascadeType.DETACH:** se separan del contexto de persistencia todas las entidades relacionadas cuando ocurre una operación de separación manual.
+
+@Entity
+public class Usuario {
+   // ...
+   @OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+   Direccion direccion;
+   @OneToOne(cascade={CascadeType.PERSIST})
+   Login login;
+   // ...
+}
