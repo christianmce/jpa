@@ -40,10 +40,12 @@ Las operaciones en cascada de JPA / Hibernate, representadas en el enum javax.pe
 
 @Entity
 public class Usuario {
-   // ...
+
    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
    Direccion direccion;
+   
    @OneToOne(cascade={CascadeType.PERSIST})
    Login login;
-   // ...
+   
+   
 }
