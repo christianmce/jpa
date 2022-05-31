@@ -12,6 +12,8 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Integer>  
 	List<Categoria> buscarXNivel(int niv);
 }
 
-
 	@Query ("select x from Empleado x where x.Edad >= ?1 and x.Depto = ?2") 
 	List<Empleado> findByEdad(int Edad, Departamento obj);
+
+
+
