@@ -26,6 +26,9 @@ public class Empleado {
 	
 	@Column(name = "email")
 	private String Email;
+	
+	@Column(name = "edad", nullable = false)
+	private int Edad;	
     
 	@ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "id_depto",referencedColumnName = "id_depto")
