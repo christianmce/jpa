@@ -29,6 +29,17 @@ public void run(String... args) throws Exception {
         movieRepo.delete(obj2);
          
         leerRepositorio();
+	
+	deptoRepo.save(new Departamento("Ventas"));
+		
+	Departamento dp1 = deptoRepo.findById(1).orElse(null);
+	Empleado emp1 = new Empleado();
+	emp1.setNombre("Juan");
+	emp1.setApellidos("Ramirez");
+	emp1.setEmail("juan@hotmail.com");
+	emp1.setDepto(dp1);
+	empRepo.save(emp1);	
+	
     }
      
     private void leerRepositorio() {
