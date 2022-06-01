@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.app.taller.entity.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer>  {
-	@Query ("select o from Categoria o where o.nombreCat like %?1")
+	@Query ("select o from Categoria o where o.nombreCat like %?1 ORDER BY o.nombreCat DESC")
 	Categoria findByNombre(String nombre);
 	
 	@Query ("select x from Categoria x where x.nivel = ?1") 
