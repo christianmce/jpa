@@ -16,4 +16,21 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Integer>  
 	List<Empleado> findByEdad(int Edad, Departamento obj);
 
 
+#------------------------- Query using named parameters
+	@Query("select u from User u where u.firstname = :firstname or u.lastname = :lastname")
+	User findByLastnameOrFirstname(@Param("lastname") String lastname, @Param("firstname") String firstname);
 
+
+
+#------------------------- NamedQuery using HQL 
+@Entity
+@NamedQuery(name = "Author.findByFirstName", query = "FROM Author WHERE firstName = ?1")
+@NamedQuery(name = "Author.findByFirstNameAndLastName", query = "SELECT a FROM Author a WHERE a.firstName = ?1 AND a.lastName = ?2")
+public class Author { ... }
+
+
+#-------------------------- NamedQuery using nativeSQL
+@Entity
+@NamedNativeQuery(name = "Author.findByFirstName", query = "SELECT * FROM author WHERE first_name = ?", resultClass = Author.class)
+@NamedNativeQuery(name = "Author.findByFirstNameAndLastName", query = "SELECT * FROM author WHERE first_name = ? AND last_name = ?", resultClass = Author.class)
+public class Author { ... }
