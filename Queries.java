@@ -21,7 +21,9 @@
 
 
 ## -------------------------- Sorting for JPA Provided and Derived Methods
-	userRepository.findAll(Sort.by(Sort.Direction.ASC, "name"));
+// Es obligatorio usar la convencion lowerCamelCase al definir los atributos en la Clase Entity debe iniciar en minúscula
+// @Column(name = "nombre") private String nombreEmp;
+	userRepository.findAll(Sort.by(Sort.Direction.ASC, "nombreEmp"));
 	userRepository.findAll(Sort.by("LENGTH(name)"));
 
 
